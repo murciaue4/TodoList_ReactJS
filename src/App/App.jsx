@@ -19,7 +19,7 @@ export function App() {
   //espacio para estados
   const [inputValue, setInputValue] = useState("");
 
-  const [todos, saveTodos] = useLocaStorage("TODO_V1", []);
+  const {loading, error, item: todos, saveItems: saveTodos} = useLocaStorage("TODO_V1", []);
 
   //espacio para funciones
 
@@ -60,6 +60,8 @@ export function App() {
   return (
     
     <AppUI
+    loading={loading}
+    error={error}
     completed = {completed}
     total = {total}
     inputValue = {inputValue}

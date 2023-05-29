@@ -3,23 +3,30 @@ import { TodoItem } from "../TodoItem";
 import TodoList from "../TodoList";
 import { TodoSearch } from "../TodoSearch";
 import { CreateTodoButton } from "../CreateTodoButton";
+import TodosLoading from "../todosLoading";
+import TodosError from "../TodosError";
 
-
-function AppUI(
-    {completed,
-    total,
-    inputValue,
-    setInputValue,
-    handleSearchTodo,
-    completeTodo,
-    deleteTodo,
-    addTodo}
-) {
+function AppUI({
+  loading,
+  error,
+  completed,
+  total,
+  inputValue,
+  setInputValue,
+  handleSearchTodo,
+  completeTodo,
+  deleteTodo,
+  addTodo,
+}) {
   return (
     <div className="App">
       <TodoCounter completed={completed} total={total} />
       <TodoSearch inputValue={inputValue} setInputValue={setInputValue} />
       <TodoList inputValue={inputValue}>
+
+        {loading?<TodosLoading/>:null}
+        {(!loading && handleSearchTodo.length == 0) && <TodosError/>}
+
         {handleSearchTodo.map((todo) => (
           <TodoItem
             key={todo.id}
@@ -45,6 +52,6 @@ function AppUI(
       />
     </div>
   );
-};
+}
 
-export {AppUI};
+export { AppUI };

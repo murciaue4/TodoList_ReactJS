@@ -1,0 +1,42 @@
+.TodoLoading{
+    
+    list-style: none;
+    height: 36px;
+    max-height: auto;
+    min-width: 350px;
+    max-width: 500px;
+    padding: 5px;
+    margin: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0px 1px 3px  rgb(223, 220, 220);
+    background: rgb(179,233,255);
+    background: linear-gradient(90deg, rgb(168, 206, 178) 0%, rgba(249,249,249,1) 48%);
+    background-size: 400% 400%;
+    animation: loading 1.4s ease-in-out infinite ;   
+}
+
+.TodoLoading button{
+    height: 74%;
+    width: 30px;
+    border-radius: 10px;
+    border: 0;
+    
+}
+@keyframes loading {
+    0%{
+        
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+    
+}
+
+
