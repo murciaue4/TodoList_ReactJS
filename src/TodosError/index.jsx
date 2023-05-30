@@ -1,9 +1,10 @@
 import React from 'react';
+import './TodosError.css'
 
-const TodosError = () => {
+const TodosError = ({error}) => {
   return (
-    <div>
-      <p>error!!!!!!!!!! :oo </p>
+    <div className='containError'>
+      <p>No hay tareas pendientes! <br /> Crea una nueva en el incono de abajo{error}</p>
     </div>
   );
 };

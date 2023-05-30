@@ -20,12 +20,12 @@ function AppUI({
 }) {
   return (
     <div className="App">
-      <TodoCounter completed={completed} total={total} />
+      <TodoCounter completed={completed} total={total} error={error}/>
       <TodoSearch inputValue={inputValue} setInputValue={setInputValue} />
       <TodoList inputValue={inputValue}>
 
         {loading?<TodosLoading/>:null}
-        {(!loading && handleSearchTodo.length == 0) && <TodosError/>}
+        {(!loading && handleSearchTodo.length == 0) && <TodosError error = {error}/>}
 
         {handleSearchTodo.map((todo) => (
           <TodoItem

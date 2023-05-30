@@ -1,19 +1,23 @@
 import React from 'react';
 import './TodoCounter.css'
 
-const TodoCounter = ({total, completed}) => {
+const TodoCounter = ({total, completed, error}) => {
   let counterText = '';
-if (completed == total) {
+if(total == 0){
+  counterText = ``
+}else if (completed == total) {
   counterText = `Felicidades haciste todo!!`
 }else{
   counterText = `${completed}/${total} tareas completadas.`
 }
 
+
   return (
     <div className='TodoCounter'>
-      <h2>
+      <h1>TAREAS</h1>
+      <h3>
          {counterText}
-      </h2>
+      </h3>
     </div>
   );
 };
