@@ -1,61 +1,100 @@
-.TodoItem{
-    
+.TodoItem {
+
     list-style: none;
-    height: 36px;
-    max-height: auto;
-    min-width: 300px;
-    max-width: 500px;
-    padding: 5px;
-    margin: 12px;
+    min-height: 145px;
+    max-height: 400px;
+    min-Width: 400px;
+    padding: 0px;
+    margin: 0px 0px 01px 0px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    border-radius: 12px;
-    box-shadow: 0px 1px 3px  black;
-    background-color: white;
-    background-image: 0;
-    
+    align-items: start;
+    border-radius: 40px;
+    box-shadow: 0px 1px 5px 1px#1b1c70;
+    background-color: #92e5f4;
+
 
     /* background-color: rgb(250, 251, 250); */
-    
-    
-    
-}
-.TodoItem p{
-    width: 100%;
-    margin: 15px;
-}
-.TodoItem button{
-    height: 74%;
-    width: 30px;
-    border-radius: 10px;
-    border: 0;
-    cursor: pointer;
-    
-}
-.TodoItem button.deleted{
-   background-image: url('/src/assets/icon_delete.svg'); 
-   background-position: center;
-   background-size: cover;
-   background-color: white;
-}
-.TodoItem button.unchecked{
-    background-image: url('/src/assets/icon-checked.svg'); 
-    background-position: center;
-    background-size: 120%;
-    background-color: white;
-    
-}
-.TodoItem button.deleted:hover{
-    background-image: url('/src/assets/icon-deletedd.svg'); 
-   background-position: center;
-   background-size: cover;
-   background-color: white;
-}
-.TodoItem button.checked{
-    background-image: url('/src/assets/icon-checkedd.svg'); 
-   background-position: center;
-   background-size: cover;
-   background-color: white;
+
+
+
 }
 
+.TodoItem p {
+    width: 100%;
+    margin: 0px 0px 15px 0px;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+.TodoItem span{
+    font-weight: 600;
+}
+
+
+.TodoItem .TodoItem-div {
+    max-width: 250px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: 10px 10px 0px 10px;
+}
+
+.TodoItem .TodoItem-div .img {
+    width: 50px;
+    height: 50px;
+    box-shadow: 0px 0px 5px rgb(255, 255, 255);
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-color: #061425;
+    background-image: url('../assets/hombre.png');
+    background-position: center;
+    background-size: 75%;
+    background-repeat: no-repeat;
+    box-shadow: 0px 0px 6px 0.1px #0d1e34;
+    
+
+}
+
+.TodoItem div.TodoItem-button {
+    width: 100px;
+    height: 100px;
+    margin: 10px 10px 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.TodoItem .TodoItem-button button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    background-color:  transparent;
+    margin-left: 10px ;
+   
+    
+
+}
+
+.TodoItem button.unchecked{
+    background-image: url('../assets/icon-check.png'); 
+    background-position: center;
+    background-size: 50%;
+    
+    background-repeat:no-repeat;
+    background-color: transparent;
+    box-shadow: 0px 0px 6px 0.1px #293441;
+    
+}
+.TodoItem button.checked{
+    background-image: url('../assets/icon-check.png'); 
+    background-position: center;
+    background-size: 50%;
+    background-color:  #03e56c;;
+    background-repeat:no-repeat;
+    
+}

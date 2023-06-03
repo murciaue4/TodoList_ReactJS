@@ -1,0 +1,32 @@
+.Banner-Week-contain{
+    width: 100%;
+    max-width: 800px;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    
+}
+.Banner-Week-contain ul{
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.Banner-Week-contain  li{
+    font-weight: 500;
+    color: rgb(167, 167, 167);
+    width: 55px;
+    text-align: center;
+}
+.Banner-Week-contain li.day-Actually{
+    font-weight: 700;
+    color: aqua
+}

@@ -22,7 +22,7 @@ const useLocaStorage = (itemName, initialValue) => {
       } catch (error) {
         setError(true)
       }
-    }, 1500);
+    }, 1000);
   },[]);  
     
   

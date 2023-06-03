@@ -1,5 +1,57 @@
 .TodoCounter{
+    width: 95%;
     text-align: center;
-    font-size: 24px;
-   
+    color: #F0F0F0 ;
+    margin: 30px 0px 30px 10px;
+    display: flex;
+    flex-direction: column;
+    
 }
+.TodoCounterTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    margin: 30px 0px 30px 0px;
+    
+}
+.TodoCounterTitle h1{
+    line-height: 0.85;
+    color: #6795f7;
+    text-align: left;
+    justify-self: end;
+    font-size: 70px;
+    margin: 0;
+    font-weight: 600;
+    
+}
+.TodoCounter h6{
+    color: #F0F0F0;
+    font-size: 19px; 
+    font-weight: 400; 
+    margin: 0; 
+    line-height: 1.2;
+}
+
+.TodoCounterStatus{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 10px 30px 0px;
+
+}
+
+.TodoCounter .TodoCounterStatus-Date{
+    text-align: left; 
+}
+.TodoCounter .TodoCounterStatus-Done{
+    text-align: end; 
+}
+
+.TodoCounter span{
+    color: #71747e;
+    text-align: end;
+    font-size: 16px;
+    font-weight: 600;
+  
+}
+

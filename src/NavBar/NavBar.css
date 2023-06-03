@@ -1,0 +1,55 @@
+.navBar-contain{
+    width: 97%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0px 0px 10px;
+}
+
+.navBar-contain .navBar-profile{
+    margin-left: 10PX;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background-color: #f0f0f0;
+    background-image: url('../assets/hombre.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+}
+.navBar-contain .navBar-buttons{
+   
+    
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+
+}
+.navBar-contain .navBar-buttons button{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 0;
+    margin-right: 10px;
+    
+    background-color: #163050;
+}
+.navBar-contain .navBar-buttons button.navBar-add{
+    background-image: url('../assets/icon-add.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}
+.navBar-contain .navBar-buttons button.navBar-notification{
+    background-image: url('../assets/icon-notify.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50%;
+}

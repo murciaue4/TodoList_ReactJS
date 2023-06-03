@@ -1,55 +1,72 @@
 import { TodoCounter } from "../TodoCounter";
 import { TodoItem } from "../TodoItem";
-import TodoList from "../TodoList";
+import {TodoList} from "../TodoList";
 import { TodoSearch } from "../TodoSearch";
 import { CreateTodoButton } from "../CreateTodoButton";
 import TodosLoading from "../todosLoading";
 import TodosError from "../TodosError";
+import { TodoContext } from "../TodoContext";
+import {TodoForm }from "../TodoForm";
+import { Modal } from "../Modal";
+import { NavBar } from "../NavBar";
+import { BannerWeek } from "../BannerWeek";
 
-function AppUI({
-  loading,
-  error,
-  completed,
-  total,
-  inputValue,
-  setInputValue,
-  handleSearchTodo,
-  completeTodo,
-  deleteTodo,
-  addTodo,
-}) {
+
+function AppUI() {
   return (
     <div className="App">
-      <TodoCounter completed={completed} total={total} error={error}/>
-      <TodoSearch inputValue={inputValue} setInputValue={setInputValue} />
-      <TodoList inputValue={inputValue}>
+      <NavBar/>
+      <TodoCounter />
+      <TodoSearch />
+      <BannerWeek/>
 
-        {loading?<TodosLoading/>:null}
-        {(!loading && handleSearchTodo.length == 0) && <TodosError error = {error}/>}
+      <TodoContext.Consumer>
+        {({
+          loading,
+          error,
+          handleSearchTodo,
+          completeTodo,
+          deleteTodo,
+          onModal,
+          
+        }) => {
+          return (
+            <>
+              <TodoList>
+                {loading ? <TodosLoading /> : null}
+                {!loading && handleSearchTodo.length == 0 && (
+                  <TodosError 
+                  error={error}
+                  
+                  />
+                )}
+                {handleSearchTodo.map((todo) => (
+                  <TodoItem
+                    key={todo.id}
+                    text={todo.text}
+                    complete={todo.complete}
+                    completeTodo={() => {
+                      completeTodo(todo.id);
+                    }}
+                    deleteTodo={() => {
+                      deleteTodo(todo.id);
+                    }}
+                  />
+                ))}
 
-        {handleSearchTodo.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            text={todo.text}
-            complete={todo.complete}
-            completeTodo={() => {
-              completeTodo(todo.id);
-            }}
-            deleteTodo={() => {
-              deleteTodo(todo.id);
-            }}
-          />
-        ))}
-      </TodoList>
-      <CreateTodoButton
-        addTodo={() =>
-          addTodo({
-            id: 6,
-            text: "harcodear el codigo para testear",
-            complete: false,
-          })
-        }
-      />
+              </TodoList>
+
+              <CreateTodoButton/>
+
+              {onModal && (
+              <Modal>
+                <TodoForm/>
+              </Modal>
+              )}
+            </>
+          );
+        }}
+      </TodoContext.Consumer>
     </div>
   );
 }
