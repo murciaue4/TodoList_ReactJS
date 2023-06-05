@@ -1,29 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./TodoItem.css";
+import { TodoContext } from "../TodoContext";
 
-export function TodoItem({ text, complete, completeTodo, deleteTodo }) {
+export function TodoItem({ text, complete, completeTodo, deleteTodo, board}) {
+  const {colorsObject} = useContext(TodoContext)
   return (
     <>
-      <div className="TodoItem">
-
+      <div className="TodoItem" style={{backgroundColor:`${colorsObject[board]}`}}>
         <div className="TodoItem-div">
           <span className="img"></span>
-          <span>Board.id</span>
+          <span>{board}</span>
           <p>{text}</p>
         </div>
 
         <div className="TodoItem-button">
-          <span>1h 30m</span>
+          
           <button
             className={`${!complete ? "unchecked" : "checked"}`}
             onClick={completeTodo}
           ></button>
-        </div>
-        {/* <button
+        <button 
+        className="delete"
         onClick={deleteTodo}
         >
-        </button> */}
+
+        </button>
+
+        </div>
+
+
       </div>
+
     </>
   );
 }

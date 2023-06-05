@@ -1,10 +1,10 @@
 import React from 'react';
 import './TodoList.css'
-const TodoList = (props) => {
+const TodoList = ({children}) => {
   return (
     <div className='TodoList'>
       <ul>
-        {props.children}
+        {children}
       </ul>
     </div>
   );

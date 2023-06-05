@@ -5,30 +5,78 @@ import { useDate } from "./useDate";
 const TodoContext = React.createContext();
 
 const TodoProvider = ({ children }) => {
+  const colors = {
+    0: "#8ee4f4",
+    1: "#f0f06a",
+    2: "#5580dd",
+    3: "#F0F0F0",
+    4: "#03fa8f",
+    5: "#01d9ff",
+    6: "#e460b6",
+  };
+
   const [inputValue, setInputValue] = useState("");
-  const {date,day, hours} = useDate()
- 
+  const { date, day, hours } = useDate();
   const {
-    loading, 
+    loading,
     error,
     item: todos,
     saveItems: saveTodos,
+    boardsKeys,
   } = useLocaStorage("TODO_V1", []);
   const [onModal, setOnModal] = useState(false);
+  const [filterDone, setFilterDone] = useState(false);
+  const [filterActive, setFilterActive] = useState(false);
 
-  const completed = todos.filter((todo) => !!todo.complete).length;
+  const [filterTask, setFilterTask] = useState(true);
+  const [filterBoards, setFilterBoards] = useState();
+  const [colorsItem, setColorsItem] = useState(colors);
+  //States => Actions//
+  const boards = boardsKeys;
+
+
+  //funcionalidad de colores dinamicos------------------------------------*
+
+  const matchColors = () => {
+    let matched = [];
+
+    for (let i = 0; i < boards.length; i++) {
+      let board = boards[i];
+      let color = colorsItem[i];
+      matched.push({ [board]: color });
+    }
+    return matched;
+  };
+  const backgroundColors = matchColors();
+  
+
+  const colorsObject = backgroundColors.reduce((obj, item) => {
+    const key = Object.keys(item)[0]; // obtengo el nombre de la propiedad del objeto
+    const value = item[key]; // Obtengop el valor asociado a esa propiedad
+    obj[key] = value; // asigno la propiedad y el valor al objeto resultante
+    return obj;
+  }, {});
+
+  
+//funcionalidad de colores dinamicos--------------------------------------------*
+
+
+
+  const completed = todos.filter((todo) => todo.complete).length;
 
   const total = todos.length;
 
-
-
   const handleSearchTodo = todos.filter((todo) =>
-    todo.text.toLowerCase().includes(inputValue.toLowerCase()));
+    todo.text.toLowerCase().includes(inputValue.toLowerCase())
+  );
 
+  const handleFilterDone = () => {
+    setFilterDone(!filterDone);
+  };
 
-
-
-    
+  const handleFilterActive = () => {
+    setFilterActive(!filterActive);
+  };
 
   const completeTodo = (id) => {
     const newTodos = [...todos]; //guardo el valor actual del estado
@@ -50,7 +98,7 @@ const TodoProvider = ({ children }) => {
     saveTodos(newTodos); // ahí sí le presto el modificador de estado.
   };
 
-  const addTodo = (text) => {
+  const addTodo = (text, board) => {
     let newTodos = [...todos];
     let dynamicId;
     newTodos.length
@@ -61,15 +109,10 @@ const TodoProvider = ({ children }) => {
       id: dynamicId,
       text: text,
       complete: false,
+      board: board,
     });
     saveTodos(newTodos);
   };
-
-  const filterCompletedTodos = () => {
-    todo
-  }
-
-
 
   return (
     <TodoContext.Provider
@@ -89,6 +132,19 @@ const TodoProvider = ({ children }) => {
         date,
         day,
         hours,
+        handleFilterDone,
+        filterDone,
+        handleFilterActive,
+        filterActive,
+        setFilterDone,
+        setFilterActive,
+        boards,
+        filterTask,
+        filterBoards,
+        setFilterTask,
+        setFilterBoards,
+        colorsObject,
+
       }}
     >
       {children}

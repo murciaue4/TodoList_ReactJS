@@ -7,13 +7,13 @@ const BannerWeek = () => {
   return (
     <div className='Banner-Week-contain'>
       <ul>
-        <li className={date.getDay() === 0 &&'day-Actually'}>Sun</li>
-        <li className={date.getDay() === 1 &&'day-Actually'}>Mon</li>
-        <li className={date.getDay() === 2 &&'day-Actually'}>Tue</li>
-        <li className={date.getDay() === 3 &&'day-Actually'}>Wed</li>
-        <li className={date.getDay() === 4 &&'day-Actually'}>Thu</li>
-        <li className={date.getDay() === 5 &&'day-Actually'}>Fri</li>
-        <li className={date.getDay() === 6 &&'day-Actually'}>Sat</li>
+        <li className={date.getDay() === 0?'day-Actually':null}>Sun</li>
+        <li className={date.getDay() === 1?'day-Actually':null}>Mon</li>
+        <li className={date.getDay() === 2?'day-Actually':null}>Tue</li>
+        <li className={date.getDay() === 3?'day-Actually':null}>Wed</li>
+        <li className={date.getDay() === 4?'day-Actually':null}>Thu</li>
+        <li className={date.getDay() === 5?'day-Actually':null}>Fri</li>
+        <li className={date.getDay() === 6?'day-Actually':null}>Sat</li>
       </ul>
     </div>
   );

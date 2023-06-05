@@ -3,7 +3,21 @@ import "./TodoSearch.css";
 import { TodoContext } from "../TodoContext";
 
 const TodoSearch = () => {
-  const { inputValue, setInputValue, total, filterSearchValuTodos } = React.useContext(TodoContext);
+  const {
+    inputValue,
+    setInputValue,
+    total,
+    filterSearchValuTodos,
+    handleFilterDone,
+    handleFilterActive,
+    filterDone,
+    filterActive,
+    boards,
+    filterTask,
+    filterBoards,
+    setFilterTask,
+    setFilterBoards,
+  } = React.useContext(TodoContext);
   return (
     <div className="contain">
       <div className="TodoSearch">
@@ -17,12 +31,20 @@ const TodoSearch = () => {
             setInputValue(event.target.value);
           }}
         />
-        <button onClick={() => {
-          filterSearchValuTodos();
-        }}></button>
+        <button
+          onClick={() => {
+            filterSearchValuTodos();
+          }}
+        ></button>
       </div>
       <div className="TodoSearch-Group">
-        <span className="task">
+        <span
+          className="task"
+          onClick={() => {
+            setFilterTask(true);
+            setFilterBoards(false);
+          }}
+        >
           <span
             style={{
               border: "solid 1px white",
@@ -41,7 +63,14 @@ const TodoSearch = () => {
           </span>
           Tasks
         </span>
-        <span className="boards">
+
+        <span 
+        className="boards"
+        onClick={() => {
+          setFilterTask(false)
+          setFilterBoards(true)
+        }}
+        >
           <span
             style={{
               border: "solid 1px white",
@@ -54,19 +83,34 @@ const TodoSearch = () => {
               fontSize: "17px",
               margin: "10px",
               fontWeight: "400",
-              
             }}
           >
-            99
+            {boards.length}
           </span>
-          Boards
+          Board{`${boards.length == 1 ? "" : "s"}`}
         </span>
       </div>
 
-      <div className="Search-filter">
-        <button className="b-A">Active</button>
-        <button className="b-D">Done</button>
-      </div>
+      {
+        filterTask && (<div className="Search-filter">
+        <button
+          className={filterActive ? "active" : null}
+          onClick={() => {
+            handleFilterActive();
+          }}
+        >
+          Active
+        </button>
+        <button
+          className={filterDone ? "active" : null}
+          onClick={() => {
+            handleFilterDone();
+          }}
+        >
+          Done
+        </button>
+      </div>)
+      }
     </div>
   );
 };

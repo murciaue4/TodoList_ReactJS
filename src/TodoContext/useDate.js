@@ -1,23 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const useDate = () => {
-   
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    
-    const getDate = () => {
-        let date = new Date();
-        return date
-    }
-    const data = getDate();
-    
-    
-    const [date, setDate] = useState(data);
-    const [day, setDay] = useState(days[data.getDay()])
-    const [hours, setHours] = useState(data.getHours())
+  const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+  const getDate = () => {
+    let date = new Date();
+    return date;
+  };
 
-    return {date,day,hours}
-}
+  const [date, setDate] = useState(getDate());
+  const [day, setDay] = useState(days[date.getDay()]);
+  const [hours, setHours] = useState(date.getHours());
 
-export {useDate};
- 
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       const currentDate = getDate();
+//       setDate(currentDate);
+//       setDay(days[currentDate.getDay()]);
+//       setHours(currentDate.getHours());
+//     }, 1000);
+
+//     return () => {
+//       clearInterval(interval);
+//     };
+//   }, []);
+
+// 
+
+  return { date, day, hours };
+};
+
+export { useDate };

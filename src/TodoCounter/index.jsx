@@ -5,7 +5,7 @@ import { TodoContext } from "../TodoContext";
 
 const TodoCounter = () => {
   const { completed, total, date, day, hours } = useContext(TodoContext);
- 
+ let greetingText = '';
   let counterText = "";
   if (total == 0) {
     counterText = ``;
@@ -15,13 +15,21 @@ const TodoCounter = () => {
     counterText = `${Math.floor((completed / total) * 100)}% Done`;
   }
 
+  if (hours < 12 && hours >= 0 ) {
+    greetingText = 'Morning!'
+  } else if(hours >= 12 && hours < 18 ){
+    greetingText = 'Day!'
+  }else{
+    greetingText = 'Nigth!'
+  }
+
   return (
     <div className="TodoCounter">
       <div className="TodoCounterTitle">
         <h1>
           Good
           <br />
-          {(hours < 12)? 'Morning!' : 'Afternoon!'}
+          {greetingText}
         </h1>
       </div>
       <div className="TodoCounterStatus">

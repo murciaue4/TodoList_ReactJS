@@ -123,14 +123,16 @@
     font-weight: 600;
     font-size: 14px;
     cursor: pointer;
+    background-color: transparent;
+    color: #F0F0F0;
+    border: solid 2px #5580dd;
 
 }
-.contain div.Search-filter button.b-A{
+.contain div.Search-filter button:active{
     background-color: #5580dd;
     border: solid 2px #5580dd;;
 }
-.contain div.Search-filter button.b-D{
-    background-color: transparent;
-    color: #F0F0F0;
+.contain div.Search-filter button.active{
+    background-color: #5580dd;
     border: solid 2px #5580dd;;
 }

@@ -1,0 +1,14 @@
+.TodoListBoards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 0 0 0 ;
+    padding: 0;
+}
+.TodoListBoards ul{
+    width: 100;
+    margin: 0 0 0 0 ;
+    padding: 0;
+}

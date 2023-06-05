@@ -1,9 +1,9 @@
 :root {
-    --color-primario: #061425;
-    --color-actions-1: #6795f7;
-    --color-actions-2: #4f86fd;
-    --color-actions-3: #5580dd;
-    --color-boards-1: #8ee4f4;
-    --color-boards-2: #f0f06a;
-    --color-boards-3: #F0F0F0;
-}
+    --color-primario: #8ee4f4;
+    --color-actions-1: #f0f06a;
+    --color-actions-2: #5580dd;
+    --color-actions-3: #F0F0F0;
+    --color-boards-1: #03fa8f;
+    --color-boards-2: #01d9ff;
+    --color-boards-3: #e460b6;
+};

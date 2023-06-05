@@ -3,8 +3,7 @@ import './NavBar.css'
 const NavBar = () => {
   return (
     <div className='navBar-contain'>
-      <div className='navBar-profile'>
-        <img src="../assets/hombre.png" alt="" />
+      <div className='navBar-profile'>   
       </div>
       <div className="navBar-buttons">
       <button className='navBar-notification'></button>
