@@ -158,10 +158,6 @@
     border: solid 2px #5580dd;
 
 }
-.contain div.Search-filter button:hover{
-    background-color: #5580dd;
-    border: solid 2px #5580dd;;
-}
 .contain div.Search-filter button.active{
     background-color: #5580dd;
     border: solid 2px #5580dd;;
