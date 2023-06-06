@@ -85,7 +85,7 @@ const TodoProvider = ({ children }) => {
       //busco la primer coincidencia
       (todo) => todo.id === id
     );
-    newTodos[index].complete = !newTodos[index].complete; // el valor será diferente al actual;
+    newTodos[index].complete = true; // el valor será diferente al actual;
     saveTodos(newTodos); // ahí sí le presto el modificador de estado.
   };
 

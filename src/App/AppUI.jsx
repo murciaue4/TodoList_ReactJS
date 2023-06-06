@@ -3,7 +3,7 @@ import { TodoItem } from "../TodoItem";
 import { TodoList } from "../TodoList";
 import { TodoSearch } from "../TodoSearch";
 import { CreateTodoButton } from "../CreateTodoButton";
-import TodosLoading from "../todosLoading";
+import TodosLoading from "../TodosLoading";
 import TodosError from "../TodosError";
 import { TodoContext } from "../TodoContext";
 import { TodoForm } from "../TodoForm";
