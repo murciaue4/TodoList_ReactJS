@@ -6,3 +6,28 @@ body{
     background:  #061425
     
 }
+@media (max-width: 767px) {
+    body{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Raleway', sans-serif;
+        background:  #061425
+        
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    body{
+        margin: 50px;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Raleway', sans-serif;
+        background:  #061425
+        
+    }
+}
+
+@media (min-width: 1024px) {
+  
+}

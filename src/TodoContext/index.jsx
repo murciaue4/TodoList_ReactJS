@@ -8,9 +8,9 @@ const TodoProvider = ({ children }) => {
   const colors = {
     0: "#8ee4f4",
     1: "#f0f06a",
-    2: "#5580dd",
+    2: "#03fa8f",
     3: "#F0F0F0",
-    4: "#03fa8f",
+    4: "#5580dd",
     5: "#01d9ff",
     6: "#e460b6",
     7: "#bc6d12f5",

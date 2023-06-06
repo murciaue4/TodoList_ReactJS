@@ -20,7 +20,7 @@
     background-color: #4f86fd;
     border-radius: 50%;
     cursor: pointer;
-    background-image: url('./src/assets/icon-add.png');
+    background-image: url('/src/assets/icon-add.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size:40%;

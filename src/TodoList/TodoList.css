@@ -12,9 +12,25 @@
     margin: 0 0 0 0 ;
     padding: 0;
 }
-/* .TodoList img{
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    right: 10%;
-} */
+
+.TodoList button{
+    
+        width: 50px;
+        height: 50px;
+        padding: 15px;
+        border-radius: 50px;
+        margin: 0px 10px 15px 10px;
+        background-color: #ff6600;
+        box-shadow: 0px 0px 6px 0.1px #0d1e34;
+        border: none;
+        background-image: url('/src/assets/todoBoard-icon.png');
+        background-size: 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: right;
+        font-size: 1.2rem;
+        font-weight: 600;
+        cursor: pointer;
+     
+}
+

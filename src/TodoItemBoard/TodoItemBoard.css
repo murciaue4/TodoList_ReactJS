@@ -3,7 +3,7 @@
     list-style: none;
     min-height: 145px;
     max-height: 400px;
-    min-Width: 400px;
+    min-width: 400px;
     padding: 0px;
     margin: 0px 0px 01px 0px;
     display: flex;
@@ -49,7 +49,7 @@
     border-radius: 50%;
     margin-bottom: 10px;
     background-color: #061425;
-    background-image: url('/src/assets/todoBoard-icon.png');
+    background-image: url('/src/assets/todoBoard-icon2.png');
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
@@ -82,9 +82,10 @@
     background-color: #0101012e;
     background-repeat: no-repeat;
 }
-.TodoItemBoard .TodoItemBoard-button button:hover{
+
+.TodoItemBoard .TodoItemBoard-button button:hover {
     height: 50px;
-    width: 50px;  
+    width: 50px;
     background-color: #bc6d12f5;
     background-size: 60%;
 }
@@ -102,8 +103,9 @@
     .TodoItemBoard {
         min-height: 145px;
         max-height: 400px;
-        min-Width: 600px;  
+        min-width: 600px;
     }
+
     .TodoItemBoard .TodoItemBoard-div span {
         font-size: 25px;
         font-weight: 600;
@@ -112,12 +114,13 @@
 
 /* Media query para escritorios */
 @media (min-width: 1024px) {
-   
+
     .TodoItemBoard {
         min-height: 145px;
         max-height: 400px;
-        min-Width: 800px;  
+        min-width: 800px;
     }
+
     .TodoItemBoard .TodoItemBoard-div span {
         font-size: 25px;
         font-weight: 600;
