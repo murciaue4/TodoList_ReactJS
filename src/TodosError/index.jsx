@@ -5,7 +5,8 @@ import './TodosError.css'
 const TodosError = ({error}) => {
   return (
     <div className='containError'>
-      <p>No existen tareas! <br /> Crea una en el incono de abajo{error}</p>
+     <p>No tasks found! <br /> Create one using the icon below{error}</p>
+     <img src="/src/assets/icon-back.png" alt="" />
     </div>
   );
 };

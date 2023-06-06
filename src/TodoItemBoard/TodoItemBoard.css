@@ -12,21 +12,16 @@
     border-radius: 40px;
     box-shadow: 0px 1px 5px 1px#1b1c70;
     background-color: #92e5f4;
-
-
-    /* background-color: rgb(250, 251, 250); */
-
-
-
 }
 
 .TodoItemBoard p {
     width: 100%;
     margin: 0px 0px 15px 0px;
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 700;
 }
-.TodoItemBoard span{
+
+.TodoItemBoard span {
     font-weight: 600;
 }
 
@@ -40,7 +35,8 @@
     justify-content: center;
     margin: 10px 10px 0px 10px;
 }
-.TodoItemBoard .TodoItemBoard-div span{
+
+.TodoItemBoard .TodoItemBoard-div span {
     color: rgb(59, 59, 59);
     font-size: larger;
     font-weight: 600;
@@ -53,11 +49,12 @@
     border-radius: 50%;
     margin-bottom: 10px;
     background-color: #061425;
+    background-image: url('/src/assets/todoBoard-icon.png');
     background-position: center;
     background-size: 75%;
     background-repeat: no-repeat;
     box-shadow: 0px 0px 6px 0.1px #0d1e34;
-    
+
 
 }
 
@@ -69,7 +66,7 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 50%;
-    
+
 
 }
 
@@ -79,13 +76,50 @@
     border-radius: 50%;
     border: 0;
     cursor: pointer;
-    background-image: url('../assets/filter.icon.png'); 
+    background-image: url('../assets/filter.icon.png');
     background-position: center;
     background-size: 50%;
-    background-color:  #0101012e;
-    background-repeat:no-repeat;
-    
-   
-    
+    background-color: #0101012e;
+    background-repeat: no-repeat;
+}
+.TodoItemBoard .TodoItemBoard-button button:hover{
+    height: 50px;
+    width: 50px;  
+    background-color: #bc6d12f5;
+    background-size: 60%;
+}
 
+/* Media query para teléfonos */
+@media (max-width: 767px) {
+    /* Estilos para pantallas de hasta 767px de ancho (teléfonos) */
+
+}
+
+/* Media query para tabletas */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    /* Estilos para pantallas de 768px a 1023px de ancho (tabletas) */
+    .TodoItemBoard {
+        min-height: 145px;
+        max-height: 400px;
+        min-Width: 600px;  
+    }
+    .TodoItemBoard .TodoItemBoard-div span {
+        font-size: 25px;
+        font-weight: 600;
+    }
+}
+
+/* Media query para escritorios */
+@media (min-width: 1024px) {
+   
+    .TodoItemBoard {
+        min-height: 145px;
+        max-height: 400px;
+        min-Width: 800px;  
+    }
+    .TodoItemBoard .TodoItemBoard-div span {
+        font-size: 25px;
+        font-weight: 600;
+    }
 }

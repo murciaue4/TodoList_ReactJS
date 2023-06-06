@@ -49,16 +49,21 @@ const TodoListBoards = () => {
           <TodoList>
             <button
               style={{
-                width: "50px",
+                width: "100px",
                 height: "50px",
-                borderRadius: "50%",
+                padding: "15px",
+                borderRadius: "50px",
                 margin: "0px 10px 15px 10px",
-                backgroundColor: "#5580dd",
+                backgroundColor: "#bc6d12f5",
                 border: "none",
-                backgroundImage: "url('/src/assets/icon-back.png')",
-                backgroundSize: "cover",
+                backgroundImage: "url('/src/assets/todoBoard-icon.png')",
+                backgroundSize: "50px",
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
+                textAlign: "right",
+                fontSize: "1.2rem",
+                fontWeight: "600",
+                cursor: "pointer"
               }}
               onClick={() => {
                 handleSetFiltered(false)

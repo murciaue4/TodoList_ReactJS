@@ -7,7 +7,7 @@ const TodoForm = () => {
   const { setOnModal, addTodo, boards } = useContext(TodoContext);
   const [text, setText] = useState("");
   const [selectedBoard, setSelectedBoard] = useState("");
-  const[createBoard, setCreateBoard] = useState("")
+  const [createBoard, setCreateBoard] = useState("");
 
   const handleSelectedBoard = (event) => {
     setSelectedBoard(event.target.value);
@@ -23,18 +23,21 @@ const TodoForm = () => {
           New Task:
         </label>
 
-        <select 
-          onChange={handleSelectedBoard}
-        >
-          <option value="">Select one of your boards</option>
+        <select onChange={handleSelectedBoard}>
+          <option value="">Select one Board</option>
           {boards.map((board) => (
             <option key={board} value={board}>
               {board}
             </option>
           ))}
         </select>
-
-        <input  placeholder="Add a new board" type="text" value={createBoard} onChange={handleCreateteBoard}/>
+        <p>or</p>
+        <input
+          placeholder="Add a new Board"
+          type="text"
+          value={createBoard}
+          onChange={handleCreateteBoard}
+        />
 
         <textarea
           id="todoAdd"
@@ -61,17 +64,12 @@ const TodoForm = () => {
             onClick={(event) => {
               event.preventDefault();
               if (!selectedBoard == "") {
-                !text == "" && addTodo(text, selectedBoard) 
-              setOnModal(false);
-              }else if(selectedBoard == "" && !createBoard == ""){
-                !text == "" && addTodo(text, createBoard) 
-              }
+                !text == "" && addTodo(text, selectedBoard);
                 setOnModal(false);
-              
-
-              {console.log(selectedBoard);
-              console.log(createBoard);
+              } else if (selectedBoard == "" && !createBoard == "") {
+                !text == "" && addTodo(text, createBoard);
               }
+              setOnModal(false);
             }}
           >
             Añadir

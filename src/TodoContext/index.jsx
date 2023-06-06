@@ -13,6 +13,7 @@ const TodoProvider = ({ children }) => {
     4: "#03fa8f",
     5: "#01d9ff",
     6: "#e460b6",
+    7: "#bc6d12f5",
   };
 
   const [inputValue, setInputValue] = useState("");

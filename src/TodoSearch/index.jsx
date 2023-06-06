@@ -39,7 +39,7 @@ const TodoSearch = () => {
       </div>
       <div className="TodoSearch-Group">
         <span
-          className="task"
+          className={`task ${filterTask && 'task2'}`}
           onClick={() => {
             setFilterTask(true);
             setFilterBoards(false);
@@ -64,12 +64,12 @@ const TodoSearch = () => {
           Tasks
         </span>
 
-        <span 
-        className="boards"
-        onClick={() => {
-          setFilterTask(false)
-          setFilterBoards(true)
-        }}
+        <span
+          className={`boards ${filterBoards && 'boards2'}`}
+          onClick={() => {
+            setFilterTask(false);
+            setFilterBoards(true);
+          }}
         >
           <span
             style={{
@@ -91,26 +91,26 @@ const TodoSearch = () => {
         </span>
       </div>
 
-      {
-        filterTask && (<div className="Search-filter">
-        <button
-          className={filterActive ? "active" : null}
-          onClick={() => {
-            handleFilterActive();
-          }}
-        >
-          Active
-        </button>
-        <button
-          className={filterDone ? "active" : null}
-          onClick={() => {
-            handleFilterDone();
-          }}
-        >
-          Done
-        </button>
-      </div>)
-      }
+      {filterTask && (
+        <div className="Search-filter">
+          <button
+            className={filterActive ? "active" : null}
+            onClick={() => {
+              handleFilterActive();
+            }}
+          >
+            Active
+          </button>
+          <button
+            className={filterDone ? "active" : null}
+            onClick={() => {
+              handleFilterDone();
+            }}
+          >
+            Done
+          </button>
+        </div>
+      )}
     </div>
   );
 };

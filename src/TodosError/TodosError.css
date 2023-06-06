@@ -1,7 +1,20 @@
+.containError{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 180px;
+    width: 250px;
+}
+
+
 .containError p{
     color: #f0f06a;
-    height: 200px;
+    height: auto;
     text-align: center;
     font-size: large;
     
+}
+.containError img{
+    transform: rotateZ(-90deg);
 }

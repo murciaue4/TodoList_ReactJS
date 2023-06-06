@@ -19,6 +19,7 @@
     align-items: center;
     border-radius: 8%;
     order: none;
+    font-weight: 800;
 
 }
 .form-container label{
@@ -35,7 +36,40 @@
     max-width: 80%;
     border-radius: 10px;
     font-size: x-large;
-    background-color:  #F0F0F0;
+    background-color:  #e4fdd4;
+    margin-bottom: 20px;
+}
+.form-container form select{
+    
+    outline: none;
+    min-height: 30px;
+    max-height: 70%;
+    min-width: 80%;
+    max-width: 80%;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    background-color:  #62f2ff;
+}
+.form-container form select option{
+    outline: none;
+    min-height: 30px;
+    max-height: 70%;
+    min-width: 80%;
+    max-width: 80%;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    background-color:  #62f2ff;  
+}
+.form-container form input{
+    
+    outline: none;
+    min-height: 30px;
+    max-height: 70%;
+    min-width: 80%;
+    max-width: 80%;
+    border-radius: 10px;
+    font-size: 1.3rem;
+    background-color:  #62f2ff;
 }
 
 .buttons-form{
@@ -44,6 +78,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 20px;
 }
 .buttons-form .form-button{
     height: 100%;

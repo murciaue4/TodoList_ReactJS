@@ -47,9 +47,18 @@
     background-repeat: no-repeat;
     background-size: 50%;
 }
+.navBar-contain .navBar-buttons button.navBar-add:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
 .navBar-contain .navBar-buttons button.navBar-notification{
-    background-image: url('../assets/icon-notify.png');
+    background-image: url('../assets/refresh-icon.png');
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 50%;
+    background-size: 70%;
+}
+.navBar-contain .navBar-buttons button.navBar-notification:hover{
+    transform: rotateZ(720deg);
+    transition: 1s;
+    background-size: 75%;
 }
