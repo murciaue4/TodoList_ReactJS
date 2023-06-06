@@ -10,7 +10,7 @@ const TodoCounter = () => {
   if (total == 0) {
     counterText = ``;
   } else if (completed == total) {
-    counterText = `Felicidades haciste todo!!`;
+    counterText = `Great, you did it all!`;
   } else {
     counterText = `${Math.floor((completed / total) * 100)}% Done`;
   }
