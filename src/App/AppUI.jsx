@@ -1,3 +1,4 @@
+import { TodoContext } from "../TodoContext";
 import { TodoCounter } from "../TodoCounter";
 import { TodoItem } from "../TodoItem";
 import { TodoList } from "../TodoList";
@@ -5,7 +6,6 @@ import { TodoSearch } from "../TodoSearch";
 import { CreateTodoButton } from "../CreateTodoButton";
 import TodosLoading from "../TodosLoading";
 import TodosError from "../TodosError";
-import { TodoContext } from "../TodoContext";
 import { TodoForm } from "../TodoForm";
 import { Modal } from "../Modal";
 import { NavBar } from "../NavBar";

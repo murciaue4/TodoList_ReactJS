@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const useDate = () => {
   const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -12,20 +12,20 @@ const useDate = () => {
   const [day, setDay] = useState(days[date.getDay()]);
   const [hours, setHours] = useState(date.getHours());
 
-//   useEffect(() => {
-//     const interval = setInterval(() => {
-//       const currentDate = getDate();
-//       setDate(currentDate);
-//       setDay(days[currentDate.getDay()]);
-//       setHours(currentDate.getHours());
-//     }, 1000);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     const currentDate = getDate();
+  //     setDate(currentDate);
+  //     setDay(days[currentDate.getDay()]);
+  //     setHours(currentDate.getHours());
+  //   }, 1000);
 
-//     return () => {
-//       clearInterval(interval);
-//     };
-//   }, []);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
-// 
+
 
   return { date, day, hours };
 };
